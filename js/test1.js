@@ -1,6 +1,6 @@
 function foo(size) {
 	var ret = [];
-	for (var i=0; i<size; i++)
+	for (var i=0; i<=size; i++)
 	{
 		ret.push(new function(val){
 			var ret = val;
