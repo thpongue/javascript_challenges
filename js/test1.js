@@ -11,3 +11,13 @@ function foo(size) {
 	}
 	return ret;
 }
+
+function bar(size) {
+	var ret = [];
+	for (var i=0; i<=size; i++) {
+		ret.push(function(){
+			return this["val"];
+		}.bind({val:i}));
+	}
+	return ret;
+}
