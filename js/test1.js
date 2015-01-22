@@ -21,3 +21,13 @@ function bar(size) {
 	}
 	return ret;
 }
+
+function baz(size) {
+	var ret = [];
+	for (var i=0; i<=size; i++) {
+		ret.push(
+				new Function("return function (){ return "+i+"}")()
+		);	
+	}
+	return ret;
+}
