@@ -1,3 +1,3 @@
 function fibonacciSequence(val) {
-	return null;
+	return true;
 }
