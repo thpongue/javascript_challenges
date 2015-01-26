@@ -6,7 +6,7 @@
 	
 		describe('attempt 1', function () {
 			it('should pass!', function () {
-				expect(new LinkedList().add("one").add("two").add("three").add("four").add("five").reverse()).toEqual(new LinkedList().add("five").add("four").add("three").add("two").add("one"));
+				expect(test4.linkedList.add("one").add("two").add("three").add("four").add("five").reverse()).toEqual(new LinkedList().add("five").add("four").add("three").add("two").add("one"));
 			});
 		});
 
