@@ -10,11 +10,5 @@
 			});
 		});
 
-//		describe('attempt 2', function () {
-//			it('should pass!', function () {
-//				//expect(?)toEqual(?);
-//			});
-//		});
-
 	});
 })();
