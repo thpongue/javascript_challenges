@@ -1,15 +1,21 @@
 var test4 = (new function() {
-	function linkedList() {
-		var val;
-		this.reverse=function() {
-			return this;
-		}
-		this.add=function(valParam) {
-			if (!val)
-			{
-				val=valParam;
-			}
-			return this;
+	return {
+		linkedList: function() {
+			function ll() {
+				var that = this;
+				this.val=null;
+				this.next=null;
+				this.reverse = function(){
+					return that;
+				}
+				this.add = function(val){
+					var ret = new ll();
+					ret.val=val;
+					that.next=ret;
+					return ret;
+				}
+			};
+			return new ll();
 		}
 	}
 }());

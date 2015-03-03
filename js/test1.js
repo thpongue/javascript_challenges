@@ -1,35 +1,37 @@
 var test1 = (new function() {
-	this.foo = function(size) {
-		var ret = [];
-		for (var i=0; i<=size; i++)
-		{
-			ret.push(new function(val){
-				var ret = val;
-				return function(){
-					return ret; 
-				};
-			}(i));
-		}
-		return ret;
-	}
+	return {
+		foo: function(size) {
+			var ret = [];
+			for (var i=0; i<=size; i++)
+			{
+				ret.push(new function(val){
+					var ret = val;
+					return function(){
+						return ret; 
+					};
+				}(i));
+			}
+			return ret;
+		},
 
-	this.bar = function(size) {
-		var ret = [];
-		for (var i=0; i<=size; i++) {
-			ret.push(function(){
-				return this["val"];
-			}.bind({val:i}));
-		}
-		return ret;
-	}
+		bar: function(size) {
+			var ret = [];
+			for (var i=0; i<=size; i++) {
+				ret.push(function(){
+					return this["val"];
+				}.bind({val:i}));
+			}
+			return ret;
+		},
 
-	this.baz = function(size) {
-		var ret = [];
-		for (var i=0; i<=size; i++) {
-			ret.push(
-					new Function("return function (){ return "+i+"}")()
-					);	
+		baz: function(size) {
+			var ret = [];
+			for (var i=0; i<=size; i++) {
+				ret.push(
+						new Function("return function (){ return "+i+"}")()
+						);	
+			}
+			return ret;
 		}
-		return ret;
 	}
 }());
